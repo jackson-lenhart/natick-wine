@@ -1,0 +1,40 @@
+.container {
+  margin: 0 auto;
+  padding: 30px;
+  color: #4C0000;
+}
+
+.container h1 {
+  font-size: 45px;
+  text-align: center;
+}
+
+.field {
+  border-radius: 5px;
+  width: 50%;
+}
+
+.field:focus {
+  border-color: #9ECAED;
+  box-shadow: 0 0 10px #9ECAED;
+}
+
+.newsletter-form {
+  padding: 20px;
+}
+
+.newsletter-form label {
+  font-size: large;
+}
+
+.submit-btn {
+  color: #FFF;
+  background-color: #4C0000;
+  cursor: pointer;
+  padding: 12px;
+  border-radius: 5px;
+}
+
+.submit-btn:hover {
+  background-color: #2d0000;
+}

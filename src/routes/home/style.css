@@ -1,0 +1,18 @@
+.dog {
+  padding: 20px;
+  cursor: pointer;
+}
+
+.btn {
+  border: solid 1px;
+  border-radius: 10px;
+  padding: 4px;
+  cursor: pointer;
+}
+
+.slide-show {
+  width: 80%;
+  margin: 0 auto;
+  font-size: large;
+  padding: 20px;
+}

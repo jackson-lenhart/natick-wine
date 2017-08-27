@@ -1,0 +1,48 @@
+body {
+  background: #CCC;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-header {
+  text-align: center;
+  color: white;
+  padding: 20px;
+  background: url('https://4.bp.blogspot.com/-45wUhp6cT54/TWgJ9GBQ7uI/AAAAAAAADpU/ais2eoXxPHk/s1600/Rode-achtergronden-rood-achtergrond-rode-wallpapers-hd-26.jpg') fixed;
+}
+
+.menu-container {
+  text-align: center;
+  background: #FFF;
+  padding-bottom: 5px;
+}
+
+.menu {
+  list-style-type: none;
+}
+
+.menu li {
+  color: #4C0000;
+}
+
+.switch {
+  cursor: pointer;
+}
+
+.switch:focus {
+  outline: 0;
+}
+
+.selection {
+  padding: 0.5em;
+  font-size: 16px;
+  border-bottom: solid 1px;
+}
+
+.selection-last {
+  padding: 0.5em;
+  font-size: 16px;
+  padding-bottom: 0.1em;
+}
