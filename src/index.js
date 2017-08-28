@@ -30,6 +30,7 @@ const menu = (state = {
 };
 
 const user = (state = {
+  isActive: false,
   firstName: 'new',
   lastName: 'name',
   email: 'person@example.com'
@@ -41,9 +42,24 @@ const user = (state = {
     case 'CREATE_USER':
       state = {
         ...state,
+        isActive: true,
         firstName: action.payload.firstName,
         lastName: action.payload.lastName,
         email: action.payload.email
+      };
+      break;
+    case 'SET_USER':
+      state = {
+        ...state,
+        firstName: action.payload.firstName,
+        lastName: action.payload.lastName,
+        email: action.payload.email
+      };
+      break;
+    case 'DEACTIVATE':
+      state = {
+        ...state,
+        isActive: false
       };
       break;
     default:

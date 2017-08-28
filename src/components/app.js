@@ -8,6 +8,7 @@ import { connect } from 'react-redux';
 
 import './app.css';
 
+import Edit from '../routes/edit';
 import Home from '../routes/home';
 import Newsletter from '../routes/newsletter';
 import Products from '../routes/products';
@@ -43,6 +44,7 @@ class App extends Component {
             <Route path='/products' component={Products} />
             <Route path='/newsletter' component={Newsletter} />
             <Route path='/success' component={Success} />
+            <Route path='/edit' component={Edit} />
           </div>
         </Router>
       </div>
