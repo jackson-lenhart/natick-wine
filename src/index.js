@@ -29,12 +29,14 @@ const menu = (state = {
   return state;
 };
 
-const user = (state = {
+const defaultState = {
   isActive: false,
-  firstName: 'new',
-  lastName: 'name',
-  email: 'person@example.com'
-}, action) => {
+  firstName: 'first name',
+  lastName: 'last name',
+  email: 'email'
+};
+
+const user = (state = defaultState, action) => {
   switch (action.type) {
     case REHYDRATE:
       state = action.payload.user || {};
@@ -57,10 +59,7 @@ const user = (state = {
       };
       break;
     case 'DEACTIVATE':
-      state = {
-        ...state,
-        isActive: false
-      };
+      state = defaultState;
       break;
     default:
       state = {

@@ -21,6 +21,41 @@ class Edit extends Component {
   }
 
   render() {
+    const formArr = [
+      {
+        text: 'First Name:',
+        name: 'fname',
+        id: 'firstName',
+        placeholder: this.props.user.firstName
+      },
+      {
+        text: 'Last Name:',
+        name: 'lname',
+        id: 'lastName',
+        placeholder: this.props.user.lastName
+      },
+      {
+        text: 'Email:',
+        name: 'email',
+        id: 'email',
+        placeholder: this.props.user.email
+      }
+    ];
+
+    const formElements = formArr.map((item, index) => {
+      return (
+        <div key={index}>
+          <label htmlFor={item.name}>{item.text}</label>
+          <input className='field'
+            type='text'
+            onChange={this.handleChange}
+            id={item.id}
+            name={item.name}
+            placeholder={item.placeholder}/>
+        </div>
+      );
+    });
+
     let changeNote = '';
     if (this.state.changesSaved) {
       changeNote = (
@@ -31,29 +66,7 @@ class Edit extends Component {
     return (
       <div className='container'>
         <form className='newsletter-form'>
-          <label htmlFor='fname'>First Name:</label>
-          <input className='field'
-            id='firstName'
-            type='text'
-            name='fname'
-            placeholder={this.props.user.firstName}
-            onChange={this.handleChange}/>
-
-          <label htmlFor='lname'>Last Name:</label>
-          <input className='field'
-            id='lastName'
-            type='text'
-            name='lname'
-            placeholder={this.props.user.lastName}
-            onChange={this.handleChange}/>
-
-          <label htmlFor='email'>Email:</label>
-          <input className='field'
-            id='email'
-            type='email'
-            name='email'
-            placeholder={this.props.user.email}
-            onChange={this.handleChange}/>
+          {formElements}
           <br/>
           <button className='submit-btn'
             type='button'

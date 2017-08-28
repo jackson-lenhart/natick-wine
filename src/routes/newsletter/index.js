@@ -21,6 +21,41 @@ class Newsletter extends Component {
   }
 
   render() {
+    const formArr = [
+      {
+        text: 'First Name:',
+        name: 'fname',
+        id: 'firstName',
+        placeholder: this.props.user.firstName
+      },
+      {
+        text: 'Last Name:',
+        name: 'lname',
+        id: 'lastName',
+        placeholder: this.props.user.lastName
+      },
+      {
+        text: 'Email:',
+        name: 'email',
+        id: 'email',
+        placeholder: this.props.user.email
+      }
+    ];
+
+    const formElements = formArr.map((item, index) => {
+      return (
+        <div key={index}>
+          <label htmlFor={item.name}>{item.text}</label>
+          <input className='field'
+            type='text'
+            onChange={this.handleChange}
+            id={item.id}
+            name={item.name}
+            placeholder={item.placeholder}/>
+        </div>
+      );
+    });
+
     if (this.props.user.isActive) {
       return (
         <div className='container'>
@@ -44,30 +79,8 @@ class Newsletter extends Component {
         <h3>{description}</h3>
 
         <form className='newsletter-form'>
-          <label htmlFor='fname'>First Name:</label>
-          <input className='field'
-            id='firstName'
-            type='text'
-            name='fname'
-            placeholder='first name'
-            onChange={this.handleChange}/>
-
-          <label htmlFor='lname'>Last Name:</label>
-          <input className='field'
-            id='lastName'
-            type='text'
-            placeholder='last name'
-            name='lname'
-            onChange={this.handleChange}/>
-
-          <label htmlFor='email'>Email:</label>
-          <input className='field'
-            id='email'
-            type='email'
-            placeholder='email'
-            name='email'
-            onChange={this.handleChange}/>
-            <br/>
+          {formElements}
+          <br/>
           <Link to='/success'>
             <button className='submit-btn'
               type='button'
